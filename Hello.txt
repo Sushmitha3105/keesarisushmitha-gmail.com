@@ -1,0 +1,12 @@
+git init
+ls
+la -a
+git status
+touch FileName
+git add FileName
+git commit -m "hello"
+git log
+git add .
+git checkout (hash value of commit value when we do git log)
+git branch main
+git merge main
