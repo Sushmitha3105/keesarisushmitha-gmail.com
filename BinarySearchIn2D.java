@@ -11,6 +11,8 @@ public class BinarySearchIn2D {
                 {30,32,44,46}
         };
         int target = 22;
+        int target1 = 25;
+        System.out.println(Arrays.toString(search(arr,target1)));
         System.out.println(Arrays.toString( search(arr,target)));
     }
 
