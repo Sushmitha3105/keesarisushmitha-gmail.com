@@ -1,0 +1,26 @@
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) {
+            return null; // If either list is empty, there can't be an intersection
+        }
+        
+        ListNode a = headA;
+        ListNode b = headB;
+        
+        while (a != b) {
+            if (a == null) {
+                a = headB; // If pointer 'a' reaches the end of list A, redirect it to the head of list B
+            } else {
+                a = a.next; // Move 'a' to the next node
+            }
+            
+            if (b == null) {
+                b = headA; // If pointer 'b' reaches the end of list B, redirect it to the head of list A
+            } else {
+                b = b.next; // Move 'b' to the next node
+            }
+        }
+        
+        return a; // Return the intersection node (which is the same as 'b' or 'a')
+    }
+}
