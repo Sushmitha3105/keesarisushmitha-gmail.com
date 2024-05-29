@@ -1,25 +1,41 @@
-package com.chicky;
+package DSA100;
+
+import java.util.Arrays;
 
 public class ReverseString {
     public static void main(String[] args) {
-        char[] str ={'h','e','l','l','o'};
-        System.out.println(str);
-        ForReverseString(str);
-        System.out.println(str);
-    }
+        String a = "abcde";
 
-    public static void ForReverseString(char[] s){
-        HelperString(s,0,s.length-1);
-
-    }
-
-    private static void HelperString(char[] s, int start, int end) {
-        if(start >= end){
-            return;
+        String[] message = {"Hello","World"};
+        StringBuilder reverseMessage = new StringBuilder();
+        for (int i = message.length-1; i >=0 ; i--) {
+            reverseMessage.append(message[i]).append(" ");
         }
-        char temp = s[start];
-        s[start] = s[end];
-        s[end] = temp;
-        HelperString(s,start+1,end-1);
+        String[] reversedMsg = reverseMessage.toString().split(" ");
+        System.out.println(Arrays.toString(reversedMsg));
+        method1(a);
+        method2(a);
+
     }
+
+
+//===============================================================================
+
+    public static void method1(String a) {
+        for(int i = a.length()-1 ; i>=0 ; i--){
+            System.out.print(a.charAt(i));
+        }
+        System.out.println(" ");
+    }
+
+    public static void method2(String a){
+        StringBuilder reverseA = new StringBuilder();
+        reverseA.append(a);
+        reverseA.reverse();
+        System.out.println(reverseA);
+
+    }
+
+
+
 }
